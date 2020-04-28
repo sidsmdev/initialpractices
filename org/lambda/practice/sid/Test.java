@@ -17,7 +17,11 @@ public class Test {
         Test t = new Test();
            
             System.out.println(t.listOfApples);
+<<<<<<< HEAD
             System.out.println(t.filterByColos(t.listOfApples, t.filterByColorp));
+=======
+            System.out.println(t.filterByColo(t.listOfApples, t.filterByColorp));
+>>>>>>> 4306fd2607268989897568f3089ee47dc6ee5e60
             System.out.println(t.filterByColorAndWeight(t.listOfApples, t.filterByColorAndWeightp));
             System.out.println(t.filterByColorAndPrice(t.listOfApples, t.filterByColorAndPricep));
             
