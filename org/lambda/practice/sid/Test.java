@@ -2,6 +2,7 @@ package org.lambda.practice.sid;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Test {
@@ -21,6 +22,7 @@ public class Test {
             System.out.println(t.filterByColorAndPrice(t.listOfApples, t.filterByColorAndPricep));
             
             System.out.println(t.consumeRes(t.listOfApples, t.consumeAndChangeAndAdd));
+            System.out.println(t.funcApplesLength(t.listOfApples, t.returnLen));
         
     }
 
@@ -63,6 +65,14 @@ public class Test {
         return consumedResult;
     }
 
+    public List<Integer> funcApplesLength(List<Apples> smpl,  Function<Apples, Integer> f){
+        List<Integer> res = new ArrayList<>();
+        for (Apples ap : smpl) {
+            res.add(f.apply(ap));
+        }
+        return res;
+    }
+
 
     Predicate<Apples> filterByColorp = (a) -> a.getColor() == "Red" ;
     Predicate<Apples> filterByColorAndWeightp = (a) -> a.getColor() == "Red" && a.getWeight() > 11;
@@ -73,4 +83,5 @@ public class Test {
         a.setPrice(13); this.consumedResult.add(a);
     };
 
+    Function<Apples, Integer> returnLen = (a) -> {return a.getColor().length();};
 }
