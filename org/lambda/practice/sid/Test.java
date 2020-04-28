@@ -17,7 +17,7 @@ public class Test {
         Test t = new Test();
            
             System.out.println(t.listOfApples);
-            System.out.println(t.filterByColor(t.listOfApples, t.filterByColorp));
+            System.out.println(t.filterByColo(t.listOfApples, t.filterByColorp));
             System.out.println(t.filterByColorAndWeight(t.listOfApples, t.filterByColorAndWeightp));
             System.out.println(t.filterByColorAndPrice(t.listOfApples, t.filterByColorAndPricep));
             
@@ -27,7 +27,7 @@ public class Test {
     }
 
 
-    public List<Apples> filterByColor( List<Apples> smpl, Predicate<Apples> p ){
+    public List<Apples> filterByColo( List<Apples> smpl, Predicate<Apples> p ){
         List<Apples> res = new ArrayList<>();
         for (Apples ap : smpl) {
             if(p.test(ap)){
